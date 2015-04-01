@@ -66,7 +66,12 @@ public abstract class BasePhilmActivity extends ActionBarActivity
         super.onNewIntent(intent);
         handleIntent(intent, getDisplay());
     }
-
+    
+    /**
+     * onCreate()执行后调用
+     * @param intent
+     * @param display
+     */
     protected void handleIntent(Intent intent, Display display) {
     }
 

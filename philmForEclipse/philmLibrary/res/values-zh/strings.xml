@@ -17,7 +17,7 @@
 
 <resources>
 
-    <string name="app_name">Philm</string>
+    <string name="app_name">电影</string>
     <string name="title_film_detail">电影详情</string>
 
     <string name="discover_title">发现</string>

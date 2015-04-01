@@ -16,23 +16,13 @@
 
 package app.philm.in.controllers;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Preconditions;
-
-import com.jakewharton.trakt.Trakt;
-import com.jakewharton.trakt.entities.NewAccount;
-import com.jakewharton.trakt.entities.Response;
-import com.jakewharton.trakt.entities.Settings;
-import com.squareup.otto.Subscribe;
-
-import android.content.Intent;
-
 import java.util.List;
 import java.util.regex.Pattern;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import retrofit.RetrofitError;
 import app.philm.in.Constants;
 import app.philm.in.Display;
 import app.philm.in.accounts.PhilmAccountManager;
@@ -52,7 +42,14 @@ import app.philm.in.util.Sha1;
 import app.philm.in.util.StringFetcher;
 import app.philm.in.util.TextUtils;
 import app.philm.in.util.TimeUtils;
-import retrofit.RetrofitError;
+
+import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
+import com.jakewharton.trakt.Trakt;
+import com.jakewharton.trakt.entities.NewAccount;
+import com.jakewharton.trakt.entities.Response;
+import com.jakewharton.trakt.entities.Settings;
+import com.squareup.otto.Subscribe;
 
 @Singleton
 public class UserController extends BaseUiController<UserController.UserUi,
@@ -378,6 +375,8 @@ public class UserController extends BaseUiController<UserController.UserUi,
 
         @Override
         public void onError(RetrofitError re) {
+        	System.out.println("re");
+        	
             for (UserUi ui : getUis()) {
                 ui.showError(Error.BAD_CREATE);
             }

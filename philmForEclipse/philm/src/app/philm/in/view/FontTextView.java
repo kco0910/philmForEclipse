@@ -16,15 +16,15 @@
 
 package app.philm.in.view;
 
+import javax.inject.Inject;
+
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
-import javax.inject.Inject;
-
 import app.philm.in.PhilmApplication;
 import app.philm.in.R;
 import app.philm.in.util.TypefaceManager;
@@ -49,8 +49,7 @@ public class FontTextView extends TextView {
 
     public FontTextView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
-        PhilmApplication.from(context).inject(this);
+        PhilmApplication.from((Activity)context).inject(this);
 
         if (!isInEditMode()) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FontTextView);

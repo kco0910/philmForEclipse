@@ -35,7 +35,12 @@ import app.philm.in.util.PhilmCollections;
 
 import com.google.common.base.Preconditions;
 
-
+/**
+ * 1、列表的多选以及menu菜单的显示
+ * @author jian.fu
+ *
+ * @param <E>
+ */
 public abstract class BasePhilmMovieListFragment<E extends AbsListView>
         extends BaseMovieControllerListFragment<E, PhilmMovie>
         implements MovieController.MovieListUi, AbsListView.OnScrollListener {
